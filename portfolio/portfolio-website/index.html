@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex Singh — DevOps & Cloud Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+  <canvas id="matrix-bg"></canvas>
+  <div class="scan-line"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="bracket">[</span>
+      <span class="logo-text">A.SINGH</span>
+      <span class="bracket">]</span>
+      <span class="cursor-blink">_</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link"><span class="nav-num">01.</span>About</a></li>
+      <li><a href="#skills" class="nav-link"><span class="nav-num">02.</span>Skills</a></li>
+      <li><a href="#projects" class="nav-link"><span class="nav-num">03.</span>Projects</a></li>
+      <li><a href="#experience" class="nav-link"><span class="nav-num">04.</span>Experience</a></li>
+      <li><a href="#contact" class="nav-link"><span class="nav-num">05.</span>Contact</a></li>
+    </ul>
+    <a href="public/resume.pdf" class="btn-resume" download>
+      <span>RESUME</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        <span>AVAILABLE FOR OPPORTUNITIES</span>
+      </div>
+      <p class="hero-greeting">Hello, World! I'm</p>
+      <h1 class="hero-name">
+        <span class="name-line">ALEX</span>
+        <span class="name-line accent">SINGH</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-prefix">&gt;&gt; </span>
+        <span class="typewriter" id="typewriter"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc">
+        Building reliable, scalable infrastructure at cloud scale.<br>
+        Automating everything. Breaking things in staging, not prod.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Pipelines Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">99.9%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">
+          <span>VIEW WORK</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-secondary">GET IN TOUCH</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="t-dot red"></div>
+          <div class="t-dot yellow"></div>
+          <div class="t-dot green"></div>
+          <span class="t-title">bash — alex@cloud:~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="t-line"><span class="t-prompt">alex@cloud:~$</span> <span class="t-cmd">kubectl get pods -n production</span></div>
+          <div class="t-line t-out">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;&nbsp;RESTARTS</div>
+          <div class="t-line t-success">api-deployment-7d4f&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;0</div>
+          <div class="t-line t-success">web-deployment-9c2a&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;0</div>
+          <div class="t-line t-success">db-statefulset-0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1/1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Running&nbsp;&nbsp;&nbsp;0</div>
+          <div class="t-line"><span class="t-prompt">alex@cloud:~$</span> <span class="t-cmd">terraform apply -auto-approve</span></div>
+          <div class="t-line t-out">Plan: 3 to add, 1 to change, 0 to destroy.</div>
+          <div class="t-line t-success">Apply complete! Resources: 3 added.</div>
+          <div class="t-line"><span class="t-prompt">alex@cloud:~$</span> <span class="t-cmd">docker build -t myapp:v2.1.0 .</span></div>
+          <div class="t-line t-success">Successfully built 8f3e2a1c9b0d</div>
+          <div class="t-line t-success">Successfully tagged myapp:v2.1.0</div>
+          <div class="t-line"><span class="t-prompt">alex@cloud:~$</span> <span class="t-cursor">█</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-intro">I architect the invisible layer that makes software work at scale.</p>
+          <p>With <strong>3+ years</strong> in DevOps and Cloud Engineering, I specialize in building automated CI/CD pipelines, managing Kubernetes clusters, and designing cloud-native infrastructure on AWS and GCP.</p>
+          <p>I believe infrastructure should be <span class="highlight">code-first, automated-always</span>, and built to survive the unexpected. From zero-downtime deployments to disaster recovery strategies — I've seen what breaks and know how to prevent it.</p>
+          <p>When I'm not terraforming the cloud, I contribute to open-source DevOps tooling and write about SRE practices.</p>
+          <div class="about-facts">
+            <div class="fact"><span class="fact-icon">📍</span> Patna, Bihar → Remote Worldwide</div>
+            <div class="fact"><span class="fact-icon">🎓</span> B.Tech Computer Science</div>
+            <div class="fact"><span class="fact-icon">🏅</span> AWS Solutions Architect Associate</div>
+            <div class="fact"><span class="fact-icon">⚡</span> Currently: Infra @ FinTech Startup</div>
+          </div>
+        </div>
+        <div class="about-image-wrap">
+          <div class="about-avatar">
+            <div class="avatar-inner">
+              <div class="avatar-icon">👨‍💻</div>
+            </div>
+            <div class="avatar-ring ring1"></div>
+            <div class="avatar-ring ring2"></div>
+            <div class="avatar-badge">
+              <span class="badge-dot"></span>OPEN TO WORK
+            </div>
+          </div>
+          <div class="cert-badges">
+            <div class="cert">AWS SAA</div>
+            <div class="cert">CKA</div>
+            <div class="cert">Terraform Associate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">TECH ARSENAL</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">☁️</span>
+            <h3>Cloud Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">GCP</span>
+            <span class="tag">Azure</span>
+            <span class="tag">EC2</span>
+            <span class="tag">S3</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">EKS</span>
+            <span class="tag">CloudFront</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">🐳</span>
+            <h3>Containers & Orchestration</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Helm</span>
+            <span class="tag">ArgoCD</span>
+            <span class="tag">Istio</span>
+            <span class="tag">containerd</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:88%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">⚙️</span>
+            <h3>IaC & Automation</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Pulumi</span>
+            <span class="tag">CloudFormation</span>
+            <span class="tag">Packer</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:92%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">🔄</span>
+            <h3>CI/CD Pipelines</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">GitLab CI</span>
+            <span class="tag">CircleCI</span>
+            <span class="tag">ArgoCD</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:95%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">📊</span>
+            <h3>Monitoring & Observability</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Prometheus</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">ELK Stack</span>
+            <span class="tag">Datadog</span>
+            <span class="tag">PagerDuty</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">🔐</span>
+            <h3>Security & Networking</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Vault</span>
+            <span class="tag">SOPS</span>
+            <span class="tag">VPC</span>
+            <span class="tag">IAM</span>
+            <span class="tag">SSL/TLS</span>
+            <span class="tag">WAF</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" style="--w:80%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card featured">
+          <div class="project-top">
+            <div class="project-folder">⭐ FEATURED</div>
+            <div class="project-links">
+              <a href="#" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></a>
+              <a href="#" title="Live"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Kubernetes Auto-Scaling Platform</h3>
+          <p class="project-desc">Multi-cluster K8s platform with custom HPA using Prometheus metrics. Handles 10K+ RPS with zero-downtime rolling deployments. Reduced infra costs by 40% via spot instance automation.</p>
+          <div class="project-tech">
+            <span>Kubernetes</span><span>Terraform</span><span>AWS EKS</span><span>Prometheus</span><span>Golang</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><span class="m-val">40%</span><span class="m-label">Cost Reduction</span></div>
+            <div class="metric"><span class="m-val">10K+</span><span class="m-label">RPS Handled</span></div>
+            <div class="metric"><span class="m-val">99.99%</span><span class="m-label">Uptime</span></div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">📁 PROJECT</div>
+            <div class="project-links">
+              <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></a>
+              <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">GitOps CI/CD Framework</h3>
+          <p class="project-desc">End-to-end GitOps pipeline using ArgoCD + GitHub Actions. Automated testing, security scanning (Trivy, SonarQube), and canary deployments. Deploy time: 45min → 8min.</p>
+          <div class="project-tech">
+            <span>ArgoCD</span><span>GitHub Actions</span><span>Helm</span><span>Trivy</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">📁 PROJECT</div>
+            <div class="project-links">
+              <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Multi-Cloud Terraform Modules</h3>
+          <p class="project-desc">Production-ready Terraform modules for AWS, GCP, Azure. VPC, EKS, RDS, monitoring stack — all opinionated and battle-tested. 200+ GitHub stars.</p>
+          <div class="project-tech">
+            <span>Terraform</span><span>AWS</span><span>GCP</span><span>Azure</span><span>HCL</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">📁 PROJECT</div>
+            <div class="project-links">
+              <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg></a>
+              <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Observability Stack Setup</h3>
+          <p class="project-desc">Full observability setup with Prometheus, Grafana, Loki, and Tempo. Custom dashboards for SLO tracking. Alert fatigue reduced by 60% via smart routing.</p>
+          <div class="project-tech">
+            <span>Prometheus</span><span>Grafana</span><span>Loki</span><span>Tempo</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">EXPERIENCE</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Senior DevOps Engineer</h3>
+                <p class="tl-company">FinTech Startup — Remote</p>
+              </div>
+              <span class="tl-date">2023 – Present</span>
+            </div>
+            <ul class="tl-list">
+              <li>Architected multi-region AWS infrastructure serving 500K+ users</li>
+              <li>Built GitOps pipeline reducing deployment time from 45 min to 8 min</li>
+              <li>Led Kubernetes migration — cut infra costs by 40%</li>
+              <li>Implemented zero-trust security model with Vault + SOPS</li>
+            </ul>
+            <div class="tl-tags"><span>AWS</span><span>K8s</span><span>Terraform</span><span>ArgoCD</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">Cloud Engineer</h3>
+                <p class="tl-company">IT Services Company — Bangalore</p>
+              </div>
+              <span class="tl-date">2022 – 2023</span>
+            </div>
+            <ul class="tl-list">
+              <li>Managed 200+ EC2 instances across dev, staging, prod environments</li>
+              <li>Automated server provisioning with Ansible — 8 hours → 20 minutes</li>
+              <li>Set up Prometheus + Grafana monitoring for 15 microservices</li>
+            </ul>
+            <div class="tl-tags"><span>AWS</span><span>Ansible</span><span>Prometheus</span><span>Docker</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="tl-header">
+              <div>
+                <h3 class="tl-role">DevOps Intern</h3>
+                <p class="tl-company">SaaS Startup — Remote</p>
+              </div>
+              <span class="tl-date">2021 – 2022</span>
+            </div>
+            <ul class="tl-list">
+              <li>Built first CI/CD pipeline using Jenkins + Docker</li>
+              <li>Wrote Terraform modules for VPC and EC2 provisioning</li>
+              <li>Maintained 99.9% uptime for production environment</li>
+            </ul>
+            <div class="tl-tags"><span>Jenkins</span><span>Docker</span><span>Terraform</span><span>Linux</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">CONTACT</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <p class="contact-heading">Let's Build Something Together</p>
+          <p class="contact-sub">Open for DevOps/SRE roles, freelance infra projects, and open-source collaboration.</p>
+          <div class="contact-links">
+            <a href="mailto:alex@example.com" class="contact-item">
+              <span class="c-icon">✉</span>
+              <span>alex@example.com</span>
+            </a>
+            <a href="https://linkedin.com/in/alexsingh" class="contact-item" target="_blank">
+              <span class="c-icon">in</span>
+              <span>linkedin.com/in/alexsingh</span>
+            </a>
+            <a href="https://github.com/alexsingh" class="contact-item" target="_blank">
+              <span class="c-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+              </span>
+              <span>github.com/alexsingh</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label>NAME</label>
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label>EMAIL</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>MESSAGE</label>
+            <textarea rows="4" placeholder="Let's talk about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">
+            <span>SEND MESSAGE</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-logo"><span class="bracket">[</span>A.SINGH<span class="bracket">]</span></span>
+        <p class="footer-text">Designed & Built with ❤️ — Deployed on Vercel</p>
+        <div class="footer-links">
+          <a href="https://github.com/alexsingh">GitHub</a>
+          <a href="https://linkedin.com/in/alexsingh">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/components/main.js"></script>
+</body>
+</html>
